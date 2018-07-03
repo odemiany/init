@@ -1,0 +1,2 @@
+hostnamectl set-hostname <new-name>
+hostname <new-name>
