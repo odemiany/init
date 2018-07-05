@@ -1,0 +1,7 @@
+#!/bin/bash
+IFS=:
+
+while read user encrypt uid gid comment home shell 
+do
+	printf "user: $user\nuid: $uid\nhome: $home \n"
+done < /etc/passwd
