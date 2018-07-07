@@ -1,6 +1,12 @@
 #!/bin/bash
 
-sudo apt-get update 2>&1 2>&1 | \
+#if [ ! -d /var/log ]
+#	sudo mkdir -p /var/log
+#fi
+
+sudo apt-get update 2>&1 | \
 	while read LINE; do echo `date +"%y-%m-%d %H:%M:%S"` "$LINE" ; done | \
 	sudo tee -a /var/log/update_script.log > /dev/null
-#sudo apt-get upgrade -y | sudo tee -a /var/log/update_script.log
+sudo apt-get upgrade -y 2>&1 | \
+	while read LINE; do echo `date +"%y-%m-%d %H:%M:%S"` "$LINE" ; done | \
+	sudo tee -a /var/log/update_script.log > /dev/null

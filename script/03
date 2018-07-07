@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	echo "usage: ./03 <folder>"
+	exit 1
+fi
+
+if [ ! -d "$1" ]; then
+	echo "Not a dir!"
+	exit 1
+fi
+
+ls -lhS "$1"

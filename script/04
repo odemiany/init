@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ ! -f ./checksum ]; then
+	md5sum /etc/crontab > ./checksum
+fi
+
+if ! md5sum --status -c ./checksum; then
+	echo "File changed"
+else
+	echo "OK"
+fi
+
