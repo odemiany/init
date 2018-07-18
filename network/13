@@ -1,0 +1,2 @@
+curl -Is <server-name> | grep Server
+default TTL

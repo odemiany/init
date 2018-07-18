@@ -1,0 +1,2 @@
+nslookup -type=NS slash16.org
+dig +trace slash16.org

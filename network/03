@@ -1,0 +1,3 @@
+networksetup -getmacaddress en4
+
+#networksetup -listallhardwareports
